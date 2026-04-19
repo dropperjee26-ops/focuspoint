@@ -1,7 +1,7 @@
 // Configuration: Set your class times here (Year, Month (0-11), Day, Hour, Min)
 const classSchedule = {
     title: "Current Session",
-    videoID: "dQw4w9WgXcQ", // Replace with your YouTube Video ID
+    videoID: "8860Pd6eyjg", // Replace with your YouTube Video ID
     start: new Date(2026, 3, 19, 10, 0), // April 19, 2026, 10:00 AM
     end: new Date(2026, 3, 19, 23, 0)    // April 19, 2026, 11:00 PM
 };
