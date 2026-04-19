@@ -1,0 +1,20 @@
+{
+  "physics": {
+    "title": "Physics",
+    "videoID": "8860Pd6eyjg",
+    "startTime": "2026-04-19T10:00:00",
+    "endTime": "2026-04-19T23:00:00"
+  },
+  "chemistry": {
+    "title": "Chemistry",
+    "videoID": "8860Pd6eyjg",
+    "startTime": "2026-04-20T13:00:00",
+    "endTime": "2026-04-20T15:00:00"
+  },
+  "maths": {
+    "title": "Maths",
+    "videoID": "8860Pd6eyjg",
+    "startTime": "2026-04-20T16:00:00",
+    "endTime": "2026-04-20T18:00:00"
+  }
+}
