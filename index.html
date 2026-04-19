@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discipline Study Hub</title>
+    <title>Discipline Hub - JEE 2026</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="nav-tabs">
+        <button onclick="loadSubject('physics')">Physics</button>
+        <button onclick="loadSubject('chemistry')">Chemistry</button>
+        <button onclick="loadSubject('maths')">Maths</button>
+    </div>
     <div class="container">
-        <h1 id="status-msg">Checking Schedule...</h1>
-        <div id="player-container">
-            </div>
+        <h1 id="status-msg">Subject Select Karein</h1>
+        <div id="player-container"></div>
         <div id="timer"></div>
     </div>
     <script src="script.js"></script>
