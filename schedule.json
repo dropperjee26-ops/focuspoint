@@ -1,20 +1,19 @@
 {
-  "physics": {
-    "title": "Physics",
-    "videoID": "8860Pd6eyjg",
-    "startTime": "2026-04-19T10:00:00",
-    "endTime": "2026-04-19T23:00:00"
+  "2026-04-20": {
+    "physics": { "id": "tD_oV9G7X2I", "title": "Units & Dimensions", "start": "10:00", "end": "13:00" },
+    "chemistry": { "id": "TEMP_ID", "title": "Chemistry Class", "start": "14:00", "end": "16:00" },
+    "maths": { "id": "TEMP_ID", "title": "Maths Class", "start": "17:00", "end": "19:00" }
   },
-  "chemistry": {
-    "title": "Chemistry",
-    "videoID": "8860Pd6eyjg",
-    "startTime": "2026-04-20T13:00:00",
-    "endTime": "2026-04-20T15:00:00"
+  "2026-04-21": {
+    "physics": { "id": "9T3p_z0S6M8", "title": "Kinematics", "start": "10:00", "end": "13:00" }
   },
-  "maths": {
-    "title": "Maths",
-    "videoID": "8860Pd6eyjg",
-    "startTime": "2026-04-20T16:00:00",
-    "endTime": "2026-04-20T18:00:00"
+  "2026-04-22": {
+    "physics": { "id": "5X7kQ8-vL_U", "title": "NLM & Friction", "start": "10:00", "end": "13:00" }
+  },
+  "2026-04-23": {
+    "physics": { "id": "Z7_yG6_X9uY", "title": "Work Power Energy", "start": "10:00", "end": "13:00" }
+  },
+  "2026-04-24": {
+    "physics": { "id": "u5_vG4_L2kQ", "title": "Circular Motion", "start": "10:00", "end": "13:00" }
   }
 }
