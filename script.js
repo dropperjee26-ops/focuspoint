@@ -1,31 +1,33 @@
-// Configuration: Set your class times here (Year, Month (0-11), Day, Hour, Min)
-const classSchedule = {
-    title: "Current Session",
-    videoID: "8860Pd6eyjg", // Replace with your YouTube Video ID
-    start: new Date(2026, 3, 19, 10, 0), // April 19, 2026, 10:00 AM
-    end: new Date(2026, 3, 19, 23, 0)    // April 19, 2026, 11:00 PM
-};
+let currentSubject = 'physics';
 
-function checkTime() {
+async function loadSubject(subject) {
+    currentSubject = subject;
+    // Cache bust trick: Adding ?t= + timestamp so browser fetches new file every time
+    const response = await fetch('schedule.json?t=' + new Date().getTime());
+    const data = await response.json();
+    const schedule = data[subject];
+    
+    checkSchedule(schedule);
+}
+
+function checkSchedule(schedule) {
     const now = new Date();
     const status = document.getElementById('status-msg');
     const player = document.getElementById('player-container');
+    const start = new Date(schedule.startTime);
+    const end = new Date(schedule.endTime);
 
-    if (now < classSchedule.start) {
-        status.innerText = "Class hasn't started yet. Be patient.";
-        player.innerHTML = `<img src="https://via.placeholder.com/800x450?text=Locked+Until+Scheduled+Time" width="100%">`;
-    } 
-    else if (now >= classSchedule.start && now <= classSchedule.end) {
-        status.innerText = "Live: " + classSchedule.title;
-        if (!player.innerHTML.includes('iframe')) {
-            player.innerHTML = `<iframe src="https://www.youtube.com/embed/${classSchedule.videoID}?rel=0" frameborder="0" allowfullscreen></iframe>`;
-        }
-    } 
-    else {
-        status.innerText = "Content Expired. You missed the window!";
-        player.innerHTML = `<div style="padding:50px; background:#222;">Class Ended. Tomorrow is a new chance.</div>`;
+    if (now < start) {
+        status.innerText = `${schedule.title} starts at ${start.toLocaleTimeString()}`;
+        player.innerHTML = `<div class="locked">Class Locked. Focused Raho!</div>`;
+    } else if (now >= start && now <= end) {
+        status.innerText = "Live: " + schedule.title;
+        player.innerHTML = `<iframe src="https://www.youtube.com/embed/${schedule.videoID}" frameborder="0" allowfullscreen></iframe>`;
+    } else {
+        status.innerText = "Opportunity Missed: " + schedule.title;
+        player.innerHTML = `<div class="expired">Discipline is freedom. Missed class will create backlog!</div>`;
     }
 }
 
-setInterval(checkTime, 1000);
-checkTime();
+// Default load
+loadSubject('physics');
